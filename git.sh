@@ -1,5 +1,5 @@
 git init
-git add *.*
+git add *
 git commit -m "first commit"
 git remote add origin https://github.com/mcems7/pos.git
 git push -u origin master
