@@ -48,6 +48,12 @@
 #ie();
 				?>
 				<li class="dropdown">
+					<a href="#">
+						<i class="fa fa-bell"></i>
+						<span>Actualizar</span>
+					</a>
+				</li>
+				<li class="dropdown">
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown">
 
 					<i class="fa fa-bell"></i>
