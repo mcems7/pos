@@ -1,6 +1,10 @@
 <?php
 @session_start();
-$_SESSION["perfil"] = "Administrador";
+if (!isset($_SESSION["perfil"]) and !isset($login) and $login){
+    header ("Location: login.php");
+}
+
+#$_SESSION["perfil"] = "Administrador";
 ?>
 <!DOCTYPE html>
 <html>
@@ -105,8 +109,9 @@ $_SESSION["perfil"] = "Administrador";
 CUERPO DOCUMENTO
 ======================================-->
 
-<body class="hold-transition skin-blue sidebar-collapse sidebar-mini login-page">
- 
+<body class="skin-blue sidebar-mini login-page">
+<!--body class="hold-transition skin-blue sidebar-collapse sidebar-mini login-page"--><!-- collapse-->
+
   <?php
 
   if(isset($_SESSION["iniciarSesion"]) && $_SESSION["iniciarSesion"] == "ok" or 1){
@@ -124,7 +129,8 @@ CUERPO DOCUMENTO
     =============================================*/
 
     include "plantilla/menu.php";
-echo $contenido;
+    
+    echo '<section id="section_contenido">'.$contenido.'</section>';
     /*=============================================
     CONTENIDO
     =============================================*/
@@ -147,6 +153,19 @@ echo $contenido;
 <style>
     .skin-blue .wrapper, .skin-blue .main-sidebar, .skin-blue .left-side {
     background-color: #ecf0f5;
+}
+#section_contenido
+{
+    min-height: 500px;
+}
+#section_contenido {
+    margin-left: 50px;
+}
+.skin-blue.sidebar-mini.login-page:not(.sidebar-collapse) #section_contenido {
+    margin-left: 233px;
+}
+.sidebar-collapse #section_contenido {
+    margin-left: 50px;
 }
 </style>
 </body>
