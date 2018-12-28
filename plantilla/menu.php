@@ -10,7 +10,7 @@
 
 			echo '<li class="active">
 
-				<a href="inicio">
+				<a href="index.php">
 
 					<i class="fa fa-home"></i>
 					<span>Inicio</span>
@@ -21,7 +21,7 @@
 
 			<li>
 
-				<a href="usuarios">
+				<a href="usuarios.php">
 
 					<i class="fa fa-user"></i>
 					<span>Usuarios</span>
@@ -37,7 +37,7 @@
 
 			echo '<li>
 
-				<a href="categorias">
+				<a href="categorias.php">
 
 					<i class="fa fa-th"></i>
 					<span>Categorías</span>
@@ -48,7 +48,7 @@
 
 			<li>
 
-				<a href="productos">
+				<a href="productos.php">
 
 					<i class="fa fa-product-hunt"></i>
 					<span>Productos</span>
@@ -63,7 +63,7 @@
     		if($_SESSION["perfil"] == "Administrador" || $_SESSION["perfil"] == "Especial"){
 
 			echo '<li>
-				<a href="proveedores">
+				<a href="proveedores.php">
 
 					<i class="fa fa-product-hunt"></i>
 					<span>Proveedores</span>
@@ -78,7 +78,7 @@
 
 			echo'<li>
 
-					<a href="clientes">
+					<a href="clientes.php">
 
 						<i class="fa fa-users"></i>
 						<span>Clientes</span>
@@ -87,10 +87,32 @@
 
 				</li>';
 
+			echo'<li>
+
+					<a href="perfil.php">
+
+						<i class="fa fa-users"></i>
+						<span>Perfiles</span>
+
+					</a>
+
+				</li>';
+
 			}
 
 			if($_SESSION["perfil"] == "Administrador" || $_SESSION["perfil"] == "Vendedor"){
+			echo'<li>
 
+					<a href="ventas.php">
+
+						<i class="fa fa-list-ul"></i>
+						<span>Ventas</span>
+
+					</a>
+
+				</li>';
+
+			
 			echo '<li class="treeview">
 
 				<a href="#">
@@ -111,7 +133,7 @@
 					
 					<li>
 
-						<a href="ventas">
+						<a href="ventas.php">
 							
 							<i class="fa fa-circle-o"></i>
 							<span>Administrar ventas</span>
@@ -163,3 +185,8 @@
 	 </section>
 
 </aside>
+<style>
+	.skin-blue .sidebar a {
+	    color: #161617;
+	}
+</style>
